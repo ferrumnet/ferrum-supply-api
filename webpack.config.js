@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
 	  mode: 'production',
@@ -15,12 +16,13 @@ module.exports = {
 			          ]
 		    },
 	  resolve: {
-		      extensions: [ '.tsx', '.ts', '.js' ]
+		      extensions: [ '.tsx', '.ts', '.js', '.json' ]
 		    },
 	  output: {
 		      filename: 'index.js',
 		      path: path.resolve(__dirname, 'dist'),
 		      libraryTarget: 'umd'
-		    }
+		    },
+	  plugins: [new webpack.IgnorePlugin(/^electron$/)],
 };
 

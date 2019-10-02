@@ -3,7 +3,6 @@ import {LambdaHttpRequest, LambdaHttpResposne} from "aws-lambda-helper";
 
 test('test totalSupply is provided', async () => {
     const req = {
-        queryStringParameters: { 'message': 'testing' },
         httpMethod: 'GET',
     } as LambdaHttpRequest;
     const res = await handler(req, {}) as LambdaHttpResposne;

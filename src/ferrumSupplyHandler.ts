@@ -28,7 +28,6 @@ export class FerrumSupplyHandler implements LambdaHttpHandler {
         const totalSupply = await totalSupplyP;
         const ethBalances = await Promise.all(ethBalancesP);
         const bnbBalances = await Promise.all(bnbBalancesP);
-        console.log(totalSupply, ethBalances, bnbBalances);
         const ethSupply = totalSupply - ethBalances.reduce((p: number, c?: number) => p + (c || 0), 0);
         const bnbSupply = totalSupply - bnbBalances.reduce((p: number, c?: number) => p + (c || 0), 0);
         const liquidSupply = ethSupply + bnbSupply;
