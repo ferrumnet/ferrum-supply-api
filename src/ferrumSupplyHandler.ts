@@ -32,6 +32,17 @@ export class FerrumSupplyHandler implements LambdaHttpHandler {
         const bnbSupply = totalSupply - bnbBalances.reduce((p: number, c?: number) => p + (c || 0), 0);
         const liquidSupply = ethSupply + bnbSupply;
 
+        if (request.queryStringParameters && request.queryStringParameters.cmc) {
+            return {
+                body: (totalSupply * 2).toFixed(12),
+                headers: {
+                    'Access-Control-Allow-Origin': '*',
+                    'Content-Type': 'text/html',
+                },
+                statusCode: 200,
+            } as LambdaHttpResposne
+        }
+
         return {
             body: liquidSupply.toFixed(12),
             headers: {
