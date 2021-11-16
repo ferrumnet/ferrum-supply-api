@@ -26,7 +26,7 @@
     "@types/aws-sdk": "^2.7.0",
     "@types/jest": "^24.0.13",
     "aws-lambda-helper": "git+https://github.com/ferrumnet/aws-lambda-helper.git",
-    "aws-sdk": "^2.496.0",
+    "aws-sdk": "^2.814.0",
     "babel-jest": "^24.8.0",
     "ferrum-chain-client": "git+https://github.com/ferrumnet/ferrum-chain-clients.git",
     "jest": "^24.8.0",
